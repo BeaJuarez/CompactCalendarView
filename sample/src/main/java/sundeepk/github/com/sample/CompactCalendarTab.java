@@ -66,6 +66,9 @@ public class CompactCalendarTab extends Fragment {
         compactCalendarView.setUseThreeLetterAbbreviation(false);
         compactCalendarView.setFirstDayOfWeek(Calendar.MONDAY);
 
+        //Current day or selected day no change color
+        compactCalendarView.shouldShowEventOnCurrentOrSelectedDay(true);
+
         loadEvents();
         loadEventsForYear(2017);
         compactCalendarView.invalidate();
@@ -152,6 +155,7 @@ public class CompactCalendarTab extends Fragment {
                 dateFormatForMonth.setTimeZone(timeZone);
                 compactCalendarView.setLocale(timeZone, locale);
                 compactCalendarView.setUseThreeLetterAbbreviation(false);
+                compactCalendarView.setEventIndicatorStyle(CompactCalendarView.FILL_LARGE_INDICATOR);
                 loadEvents();
                 loadEventsForYear(2017);
                 logEventsByMonth(compactCalendarView);
